@@ -24,12 +24,12 @@ public class Inicio extends JFrame {
     public Inicio() {
         controlador = new Controlador();
 
-        setTitle("FIRMA");
+        setTitle("MENU");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 250, 300);
+        setBounds(500, 250, 450, 170);
         JPanel contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-        contentPane.setBackground(Color.black);
+        contentPane.setBackground(Color.white);
         setContentPane(contentPane);
         setLayout(null);
 
@@ -39,70 +39,62 @@ public class Inicio extends JFrame {
         VentanaFirmador firmador = new VentanaFirmador(this);
         VentanaVerificador comprobador = new VentanaVerificador(this);
 
-        JLabel labIngreseContrasena2 = new JLabel("FIRMA DIGITAL");
-        labIngreseContrasena2.setForeground(Color.white);
-        labIngreseContrasena2.setFont(new Font("tahoma", Font.BOLD, 14));
-        labIngreseContrasena2.setBounds(65, 10, 150, 30);
-        contentPane.add(labIngreseContrasena2);
+        JLabel labIngreseContrasena = new JLabel("WAH ORTIZ SUI SOM                          5IV6");
+        labIngreseContrasena.setForeground(Color.black);
+        labIngreseContrasena.setBounds(105, 10, 400, 30);
+        contentPane.add(labIngreseContrasena);
 
-        JButton butGeneradorPDF = new JButton("CREAR Y FIRMAR PDF");
+        JButton butGeneradorPDF = new JButton("Generar el PDF y firmarlo");
         butGeneradorPDF.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 PDFsito.setVisible(true);
                 dispose();
             }
         });
-        butGeneradorPDF.setBackground(Color.pink);
-        butGeneradorPDF.setBounds(40, 51, 160, 23);
+        butGeneradorPDF.setForeground(Color.white);
+        butGeneradorPDF.setFont(new Font("Agency FB", Font.ITALIC, 20));
+        butGeneradorPDF.setBackground(Color.black);
+        butGeneradorPDF.setBounds(10, 51, 200, 23);
         contentPane.add(butGeneradorPDF);
 
-        JButton butGeneradorClaves = new JButton("GENERAR CLAVES");
+        JButton butGeneradorClaves = new JButton("Generar las claves");
         butGeneradorClaves.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 generadorClaves.setVisible(true);
                 dispose();
             }
         });
-        butGeneradorClaves.setBackground(Color.pink);
-        butGeneradorClaves.setBounds(40, 91, 160, 23);
+        butGeneradorClaves.setBackground(Color.black);
+        butGeneradorClaves.setFont(new Font("Agency FB", Font.ITALIC, 20));
+        butGeneradorClaves.setForeground(Color.white);
+        butGeneradorClaves.setBounds(220, 51, 200, 23);
         contentPane.add(butGeneradorClaves);
 
-        JButton butFirmador = new JButton("EXPORTAR FIRMA");
+        JButton butFirmador = new JButton("Generar y exportar firma");
         butFirmador.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 firmador.setVisible(true);
                 dispose();
             }
         });
-        butFirmador.setBackground(Color.pink);
-        butFirmador.setBounds(40, 131, 160, 23);
+        butFirmador.setForeground(Color.white);
+        butFirmador.setFont(new Font("Agency FB", Font.ITALIC, 20));
+        butFirmador.setBackground(Color.black);
+        butFirmador.setBounds(10, 91, 200, 23);
         contentPane.add(butFirmador);
 
-        JButton butComprobador = new JButton("COMPROBAR");
+        JButton butComprobador = new JButton("Validación");
         butComprobador.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 comprobador.setVisible(true);
                 dispose();
             }
         });
-        butComprobador.setBackground(Color.pink);
-        butComprobador.setBounds(40, 171, 160, 23);
+        butComprobador.setForeground(Color.white);
+        butComprobador.setFont(new Font("Agency FB", Font.ITALIC, 20));
+        butComprobador.setBackground(Color.black);
+        butComprobador.setBounds(220, 91, 200, 23);
         contentPane.add(butComprobador);
-        
-        JLabel labIngreseContrasena = new JLabel("Angeles Lopez");
-        labIngreseContrasena.setForeground(Color.white);
-        labIngreseContrasena.setBounds(75, 200, 150, 30);
-        contentPane.add(labIngreseContrasena);
-        
-        JLabel labIngreseContrasena1 = new JLabel("Erick Jesse");
-        labIngreseContrasena1.setForeground(Color.white);
-        labIngreseContrasena1.setBounds(85, 215, 150, 30);
-        contentPane.add(labIngreseContrasena1);
-        
-        JLabel labIngreseContrasena12 = new JLabel("5IV6");
-        labIngreseContrasena12.setForeground(Color.white);
-        labIngreseContrasena12.setBounds(105, 235, 150, 30);
-        contentPane.add(labIngreseContrasena12);
     }
 
     public Controlador getControlador() {

@@ -21,14 +21,19 @@ public class VentanaPDF extends javax.swing.JFrame {
      */
     public VentanaPDF() {
         initComponents();
-        this.getContentPane().setBackground(Color.black);
-        this.jLabel1.setForeground(Color.white);
-        this.jLabel2.setForeground(Color.white);
-        this.jLabel3.setForeground(Color.white);
-        this.jLabel4.setForeground(Color.white);
-        this.jLabel5.setForeground(Color.white);
-        this.Generar.setBackground(Color.pink);
-        this.Firmar.setBackground(Color.pink);
+        this.setTitle("GENERAR EL PDF");
+        this.getContentPane().setBackground(Color.white);
+        this.jLabel1.setForeground(Color.black);
+        this.jLabel2.setForeground(Color.black);
+        this.jLabel3.setForeground(Color.black);
+        this.jLabel4.setForeground(Color.black);
+        this.jLabel5.setForeground(Color.black);
+        this.Generar.setBackground(Color.black);
+        this.Generar.setForeground(Color.white);
+        Generar.setFont(new java.awt.Font("Agency FB", java.awt.Font.ITALIC, 20));
+        this.Firmar.setBackground(Color.black);
+        this.Firmar.setForeground(Color.white);
+        Firmar.setFont(new java.awt.Font("Agency FB", java.awt.Font.ITALIC, 20));
     }
 
     /**
@@ -55,16 +60,16 @@ public class VentanaPDF extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
-        setBounds(new java.awt.Rectangle(100, 100, 0, 0));
+        setBounds(new java.awt.Rectangle(500, 250, 0, 0));
 
-        Firmar.setText("REGRESAR");
+        Firmar.setText("Menu principal");
         Firmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FirmarActionPerformed(evt);
             }
         });
 
-        Generar.setText("GENERAR");
+        Generar.setText("Generar");
         Generar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GenerarActionPerformed(evt);
@@ -75,73 +80,71 @@ public class VentanaPDF extends javax.swing.JFrame {
 
         jLabel2.setText("Apellidos");
 
-        jLabel3.setText("Boleta");
+        jLabel3.setText("Edad");
 
-        jLabel4.setText("Carta de reyes:");
+        jLabel4.setText("Razones por las que me deberia de pasar:");
 
         Mensaje.setColumns(20);
         Mensaje.setRows(5);
         jScrollPane1.setViewportView(Mensaje);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setText("CREAR Y FIRMAR EL PDF");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(Generar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Firmar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(13, 13, 13)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel5)
+                        .addGap(55, 55, 55)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(64, 64, 64)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel4)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Boleta, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Apellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(jLabel5)
+                                .addComponent(Generar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(52, 52, 52)
+                                .addComponent(Firmar, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(Apellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(Boleta, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1)
+                        .addComponent(jLabel2)
+                        .addComponent(jLabel3)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(Apellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                    .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Apellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Boleta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Generar)
                     .addComponent(Firmar))
@@ -173,7 +176,6 @@ public class VentanaPDF extends javax.swing.JFrame {
      * @param args the command line arguments
      */
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Apellidos;
     private javax.swing.JTextField Boleta;
@@ -191,33 +193,36 @@ public class VentanaPDF extends javax.swing.JFrame {
 
     private void generar(String nombre) throws FileNotFoundException, DocumentException {
         if (!(Nombre.getText().isEmpty() || (Apellidos.getText().isEmpty()) || (Boleta.getText().isEmpty()) || (Mensaje.getText().isEmpty()))) {
-            
-             FileOutputStream archivo = new FileOutputStream( nombre + ".pdf");
+
+            FileOutputStream archivo = new FileOutputStream(nombre + ".pdf");
             Document documento = new Document();
             PdfWriter.getInstance(documento, archivo);
-            
+
             documento.open();
-            Paragraph parrafo = new Paragraph("Datos personales");
+            Paragraph parrafo = new Paragraph("DATOS OBTENIDOS");
             parrafo.setAlignment(1);
-            
-           
+
             documento.add(parrafo);
             documento.add(new Paragraph("Nombre: " + Nombre.getText()));
             documento.add(new Paragraph("Apellidos: " + Apellidos.getText()));
             documento.add(new Paragraph("Boleta: " + Boleta.getText()));
-            documento.add(new Paragraph("Carta de reyes: " + Mensaje.getText()));
-         
+            documento.add(new Paragraph("razones: " + Mensaje.getText()));
+
             documento.close();
-            
+
             FileOutputStream archivo2 = new FileOutputStream(nombre + "Firmado" + ".pdf");
             Document documento2 = new Document();
             PdfWriter.getInstance(documento2, archivo2);
-            
+
             documento2.open();
-            Paragraph parrafo3= new Paragraph("Datos personales");
+            Paragraph parrafo3 = new Paragraph("Datos personales");
             parrafo.setAlignment(1);
-            
-            Paragraph parrafo2 = new Paragraph("");
+
+            Paragraph parrafo2 = new Paragraph("avF5w+GA7aM3kRZayoGd+VEauaIj7FkJ1MpZixoIWANxhgswC0UbROthCAQwg9EAdEUyBncy8rVo"
+                    + "FLWkhm9tYJ6YpatDwDv/T7NfSQ2VKPAskkDrgeLCpeiln1+SPUn96eKRDN68+dSFe6kk6HWwkRm3"
+                    + "iZ+PSsWGtdmey0KYWhjPu2jbZh5qAlms2G8KEWiSCxEv/2JiyWGUE1Yg1Cr4HDGG8oGOhFJgVg4l"
+                    + "8tE6rKD24AVfjRAMBGHdoiagxNCoDb0BrO38SkQbPNaPWYD6ISU3VR2/dxEnirSrjEJL/XNYcasn"
+                    + "WCGDCptM6alT+D/QI1dqsWYMWdZ2ozqMrG6mgA==");
             parrafo2.setAlignment(1);
             documento2.add(parrafo3);
             documento2.add(new Paragraph("Nombre: " + Nombre.getText()));
@@ -226,12 +231,10 @@ public class VentanaPDF extends javax.swing.JFrame {
             documento2.add(new Paragraph("Carta de reyes: " + Mensaje.getText()));
             documento2.add(parrafo2);
             documento2.close();
-            
-            
-            JOptionPane.showMessageDialog(null, "PDF creado correctamente");
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Llene todos los campos");
+
+            JOptionPane.showMessageDialog(null, "SE CREO EL PDF");
+        } else {
+            JOptionPane.showMessageDialog(null, "ERROR, INGRESE TODOS LOS DATOS SOLICITADOS");
         }
 
     }

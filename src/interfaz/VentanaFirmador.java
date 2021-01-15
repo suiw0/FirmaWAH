@@ -40,62 +40,63 @@ public class VentanaFirmador extends JFrame implements ActionListener {
         this.inicio = inicio;
         rutaArchivo = "";
 
+        this.setTitle("FIRMA");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 320, 210);
+        setBounds(500, 250, 300, 170);
         JPanel contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-        contentPane.setBackground(Color.black);
+        contentPane.setBackground(Color.white);
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
-        JLabel labIngreseContrasena2 = new JLabel("EXPORTAR FIRMA", SwingConstants.CENTER);
-        labIngreseContrasena2.setForeground(Color.white);
-        labIngreseContrasena2.setFont(new Font("tahoma", Font.BOLD, 14));
-        labIngreseContrasena2.setBounds(80, 10, 150, 30);
-        contentPane.add(labIngreseContrasena2);
-        
         //--------------------------------------------------------
         JButton butSubirDocumento = new JButton("Subir archivo");
         butSubirDocumento.setActionCommand(SUBIR_ARCHIVO);
         butSubirDocumento.addActionListener((ActionListener) this);
-        butSubirDocumento.setBackground(Color.pink);
-        butSubirDocumento.setBounds(10, 50, 125, 23);
+        butSubirDocumento.setBackground(Color.black);
+        butSubirDocumento.setFont(new Font("Agency FB", Font.ITALIC, 20));
+        butSubirDocumento.setForeground(Color.white);
+        butSubirDocumento.setBounds(10, 10, 125, 23);
         contentPane.add(butSubirDocumento);
         //--------------------------------------------------------
 
         passFieldContrasena = new JPasswordField();
-        passFieldContrasena.setBounds(145, 90, 150, 20);
+        passFieldContrasena.setBounds(150, 55, 125, 20);
         contentPane.add(passFieldContrasena);
 
         JLabel labIngreseContrasena = new JLabel("Clave privada", SwingConstants.CENTER);
-        labIngreseContrasena.setForeground(Color.white);     
-        labIngreseContrasena.setBounds(50, 90, 85, 30);
+        labIngreseContrasena.setForeground(Color.black);
+        labIngreseContrasena.setBounds(150, 10, 85, 30);
         contentPane.add(labIngreseContrasena);
 
         //--------------------------------------------------------
-        JButton butFirmarDocumento = new JButton("FIRMAR");
+        JButton butFirmarDocumento = new JButton("firmar archivo");
         butFirmarDocumento.setActionCommand(FIRMAR_ARCHIVO);
         butFirmarDocumento.addActionListener((ActionListener) this);
-        butFirmarDocumento.setBackground(Color.pink);
-        butFirmarDocumento.setBounds(10, 130, 125, 23);
+        butFirmarDocumento.setBackground(Color.black);
+        butFirmarDocumento.setFont(new Font("Agency FB", Font.ITALIC, 20));
+        butFirmarDocumento.setForeground(Color.white);
+        butFirmarDocumento.setBounds(10, 95, 125, 23);
         contentPane.add(butFirmarDocumento);
         //--------------------------------------------------------
 
         txtNombreDocumento = new JTextField();
         txtNombreDocumento.setEditable(false);
-        txtNombreDocumento.setBounds(145, 50, 150, 20);
+        txtNombreDocumento.setBounds(10, 55, 125, 20);
         contentPane.add(txtNombreDocumento);
         txtNombreDocumento.setColumns(10);
 
-        JButton butMenuPrincipal = new JButton("REGRESAR");
+        JButton butMenuPrincipal = new JButton("Menu principal");
         butMenuPrincipal.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 inicio.setVisible(true);
                 dispose();
             }
         });
-        butMenuPrincipal.setBackground(Color.pink);
-        butMenuPrincipal.setBounds(170, 130, 125, 23);
+        butMenuPrincipal.setBackground(Color.black);
+        butMenuPrincipal.setFont(new Font("Agency FB", Font.ITALIC, 20));
+        butMenuPrincipal.setForeground(Color.white);
+        butMenuPrincipal.setBounds(150, 95, 125, 23);
         contentPane.add(butMenuPrincipal);
     }
 
@@ -117,12 +118,10 @@ public class VentanaFirmador extends JFrame implements ActionListener {
         //verificar datos minimos
         String password = new String(passFieldContrasena.getPassword());
         if (rutaArchivo.equals("") || password.equals("")) {
-            JOptionPane.showMessageDialog(this, "Seleccione un archivo y una contraseña",
+            JOptionPane.showMessageDialog(this, "LLENE TODOS LOS CAMPOS SOLICITADOS",
                     "Error", JOptionPane.ERROR_MESSAGE);
         } else {
             Controlador controlador = inicio.getControlador();
-
-            JOptionPane.showMessageDialog(this, "Seleccione el destino del archivo");
 
             //Seleccionar donde guardar la firma
             JFileChooser fc = new JFileChooser();
@@ -137,13 +136,13 @@ public class VentanaFirmador extends JFrame implements ActionListener {
                 //proceder a firmar
                 try {
                     controlador.firmarArchivo(rutaArchivo, rutaFirma, password);
-                    JOptionPane.showMessageDialog(this, "Se genero la firma", "Respuesta", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "FIRMA GENERADA", "Respuesta", JOptionPane.INFORMATION_MESSAGE);
 
                     rutaArchivo = "";
                     txtNombreDocumento.setText("");
                     passFieldContrasena.setText("");
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
                 }
             }
         }
