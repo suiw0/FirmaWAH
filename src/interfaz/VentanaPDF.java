@@ -218,11 +218,7 @@ public class VentanaPDF extends javax.swing.JFrame {
             Paragraph parrafo3 = new Paragraph("Datos personales");
             parrafo.setAlignment(1);
 
-            Paragraph parrafo2 = new Paragraph("avF5w+GA7aM3kRZayoGd+VEauaIj7FkJ1MpZixoIWANxhgswC0UbROthCAQwg9EAdEUyBncy8rVo"
-                    + "FLWkhm9tYJ6YpatDwDv/T7NfSQ2VKPAskkDrgeLCpeiln1+SPUn96eKRDN68+dSFe6kk6HWwkRm3"
-                    + "iZ+PSsWGtdmey0KYWhjPu2jbZh5qAlms2G8KEWiSCxEv/2JiyWGUE1Yg1Cr4HDGG8oGOhFJgVg4l"
-                    + "8tE6rKD24AVfjRAMBGHdoiagxNCoDb0BrO38SkQbPNaPWYD6ISU3VR2/dxEnirSrjEJL/XNYcasn"
-                    + "WCGDCptM6alT+D/QI1dqsWYMWdZ2ozqMrG6mgA==");
+            Paragraph parrafo2 = new Paragraph("");
             parrafo2.setAlignment(1);
             documento2.add(parrafo3);
             documento2.add(new Paragraph("Nombre: " + Nombre.getText()));
